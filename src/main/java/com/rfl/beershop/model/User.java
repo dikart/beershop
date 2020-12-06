@@ -1,9 +1,6 @@
 package com.rfl.beershop.model;
 
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 import javax.persistence.*;
@@ -14,9 +11,11 @@ import java.util.Set;
 
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
 @Getter
 @Setter
 @Table(name = "users")
+@ToString(callSuper = true, exclude = {"password"})
 public class User extends AbstractPersistable<Integer> {
     @Column(name = "email", nullable = false, unique = true)
     @Email
