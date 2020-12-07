@@ -16,7 +16,7 @@ import java.util.Set;
 @Setter
 @Table(name = "users")
 @ToString(callSuper = true, exclude = {"password"})
-public class User extends AbstractPersistable<Integer> {
+public class User extends BaseEntity {
     @Column(name = "email", nullable = false, unique = true)
     @Email
     @NotEmpty
